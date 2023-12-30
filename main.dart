@@ -14,6 +14,28 @@ void main() {
   for (int i = 2; i <= 10; i += 2) {
     print(i);
   }
+  var userCredentials = {
+    'user345@gmail.com': '354',
+    'albertjohn56@gmail.com': 'albert',
+    'asimyusra48@gmail.com': '789',
+  };
+
+  bool isLoginSuccessful = false;
+
+  while (!isLoginSuccessful) {
+    stdout.write('Enter E-mail: ');
+    var email = stdin.readLineSync();
+    stdout.write('Enter password: ');
+    var password = stdin.readLineSync();
+
+    if (userCredentials.containsKey(email) &&
+        userCredentials[email] == password) {
+      print('User login successful.');
+      isLoginSuccessful = true;
+    } else {
+      print('Invalid login credentials. Please try again.');
+    }
+  }
   List prime_numbers = [2, 3, 5, 7, 11, 13, 17, 19, 23];
 // ignore: unused_local_variable
   var number = 16;
